@@ -17,6 +17,7 @@ namespace ApiSchool_db.Models
         public DbSet<ApiSchool_db.Models.profesores> profesores { get; set; }
         public DbSet<ApiSchool_db.Models.alumnos> alumnos { get; set; }
         public DbSet<ApiSchool_db.Models.directiva> directiva { get; set; }
+        public DbSet<ApiSchool_db.Models.usuarios> usuarios { get; set; }
 
        
     }

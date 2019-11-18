@@ -11,6 +11,7 @@ using ApiSchool_db.Models;
 
 namespace ApiSchool_db.Controllers
 {
+    [EnableCors(origins: "https://localhost:4200", headers: "*", methods: "get,post,put")]
     [Route("api/[controller]")]
     [ApiController]
     public class DirectivaController: ControllerBase

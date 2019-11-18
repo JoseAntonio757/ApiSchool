@@ -8,8 +8,7 @@ namespace ApiSchool_db.Models
 {
     public class login
     {
-        [Key]
-        public int id { get; set; }
+        
         [Required]
         public string correo { get; set; }
         [Required]

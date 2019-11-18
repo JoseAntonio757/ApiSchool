@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ApiSchool_db.Models;
+using System.Web.Http.Cors;
 
 namespace ApiSchool_db.Controllers
 {
+    [EnableCors(origins: "https://localhost:4200", headers: "*", methods: "get,post,put")]
     [Route("api/[controller]")]
     [ApiController]
    
@@ -83,6 +85,7 @@ namespace ApiSchool_db.Controllers
             _context.tutores.Add(tutores);
             await _context.SaveChangesAsync();
 
+
             return CreatedAtAction("Gettutores", new { id = tutores.id_tutor }, tutores);
         }
 
@@ -107,25 +110,6 @@ namespace ApiSchool_db.Controllers
             return _context.tutores.Any(e => e.id_tutor == id);
         }
         
-        /*
-        //post directiva
-        [HttpPost]
-        public async Task<ActionResult<directiva>> directiva (directiva directiva)
-        {
-            _context.directiva.Add(directiva);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("Getdirectiva", new { id = directiva.id_directiva }, directiva);
-        }
-
-        //post alumnos
-        [HttpPost]
-        public async Task<ActionResult<alumnos>> alumnos(alumnos alumnos)
-        {
-            _context.alumnos.Add(alumnos);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("Getalumnos", new { id = alumnos.id_alumnos }, alumnos);
-        }*/
+        
     }
 }

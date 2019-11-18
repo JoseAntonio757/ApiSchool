@@ -19,10 +19,9 @@ namespace ApiSchool_db
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
-
-
+            Configuration = configuration;            
         }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public IConfiguration Configuration { get; }
 
@@ -31,10 +30,11 @@ namespace ApiSchool_db
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("_myAllowSpecificOrigins",
+                options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:4200/").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:4200",
+                                        "http://localhost:44395");
                 });
             });
             services.AddControllers();
@@ -42,28 +42,31 @@ namespace ApiSchool_db
             services.AddDbContext<ApiSchool_dbContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("ApiSchool_dbContext")));
 
-          
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-           
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.UseAuthentication();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            app.UseCors("_myAllowSpecificOrigins");
 
         }
 
