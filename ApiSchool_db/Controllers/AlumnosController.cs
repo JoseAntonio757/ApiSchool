@@ -9,7 +9,7 @@ using ApiSchool_db.Models;
 using System.Web.Http.Cors;
 namespace ApiSchool_db.Controllers
 {
-    [EnableCors(origins: "https://localhost:4200", headers: "*", methods: "get,post,put")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "get,post,put")]
     [Route("api/[controller]")]
     [ApiController]
     public class AlumnosController : ControllerBase
@@ -59,6 +59,7 @@ namespace ApiSchool_db.Controllers
             try
             {
                 await _context.SaveChangesAsync();
+                return CreatedAtAction("Getalumnos", new { id = alumnos.id_alumnos }, alumnos);
             }
             catch (DbUpdateConcurrencyException)
             {

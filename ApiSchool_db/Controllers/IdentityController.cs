@@ -18,18 +18,18 @@ using System.Data.SqlClient;
 
 namespace ApiSchool_db.Controllers
 {
-    [EnableCors(origins: "https://localhost:4200", headers: "*", methods: "get,post,put")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "get,post,put")]
     [Route("api/[controller]")]
     [ApiController]
     public class IdentityController : ControllerBase
     {
-
         private readonly ApiSchool_dbContext _context;
 
         public IdentityController(ApiSchool_dbContext context)
         {
             _context = context;
         }
+
 
         // GET: api/SchoolProfesores
         [HttpGet("{id}")]
@@ -44,9 +44,15 @@ namespace ApiSchool_db.Controllers
 
             return profesor;
         }
+        [HttpPost]
+        public async Task<ActionResult<login>> Postusuarios(usuarios usuarios)
+        {
+            _context.usuarios.Add(usuarios);
+            await _context.SaveChangesAsync();
 
-        
 
+            return CreatedAtAction("Getusuario", new { id = usuarios.id }, usuarios);
+        }
     }
 }
 

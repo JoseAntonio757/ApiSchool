@@ -10,7 +10,7 @@ using System.Web.Http.Cors;
 
 namespace ApiSchool_db.Controllers
 {
-    [EnableCors(origins: "https://localhost:4200", headers: "*", methods: "get,post,put")]
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "get,post,put")]
     [Route("api/[controller]")]
     [ApiController]
    
@@ -79,12 +79,13 @@ namespace ApiSchool_db.Controllers
         // POST: api/School
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
+
         [HttpPost]
         public async Task<ActionResult<tutores>> Posttutores(tutores tutores)
         {
             _context.tutores.Add(tutores);
             await _context.SaveChangesAsync();
-
+                
 
             return CreatedAtAction("Gettutores", new { id = tutores.id_tutor }, tutores);
         }

@@ -120,3 +120,11 @@ C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\obj\Release\netcoreapp3.0\
 C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\obj\Release\netcoreapp3.0\ApiSchool_db.dll
 C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\obj\Release\netcoreapp3.0\ApiSchool_db.pdb
 C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\obj\Release\netcoreapp3.0\ApiSchool_db.csprojAssemblyReference.cache
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\web.config
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\System.Data.OleDb.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\System.Data.SqlClient.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Data.OleDb.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\X455L\source\repos\ApiSchool_db\ApiSchool_db\bin\Release\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
